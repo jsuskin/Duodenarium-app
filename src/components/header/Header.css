@@ -1,0 +1,90 @@
+.header-container {
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  top: 0;
+  z-index: 100000;
+  background: #2e2a2a;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.cats {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 30px;
+  margin-top: 5px;
+}
+
+.cat {
+  margin: 0 4px;
+}
+
+.cat1 {
+  filter: invert(48%) saturate(9207%) hue-rotate(630deg) brightness(495%) contrast(1380%) opacity(0%);
+  transform: rotate(24deg);
+  height: 78px;
+  width: 78px;
+}
+
+.cat2 {
+  filter: invert(48%) saturate(9207%) hue-rotate(630deg) brightness(495%) contrast(1380%) opacity(25%);
+  transform: rotate(22deg);
+  height: 81px;
+  width: 81px;
+}
+
+.cat3 {
+  filter: invert(48%) saturate(9207%) hue-rotate(630deg) brightness(495%) contrast(1380%) opacity(50%);
+  transform: rotate(20deg);
+  height: 84px;
+  width: 84px;
+}
+
+.cat4 {
+  filter: invert(48%) saturate(9207%) hue-rotate(630deg) brightness(495%) contrast(1380%) opacity(75%);
+  transform: rotate(18deg);
+  height: 87px;
+  width: 87px;
+}
+.cat5 {
+  filter: invert(48%) saturate(9207%) hue-rotate(630deg) brightness(495%) contrast(1380%) opacity(100%);
+  transform: rotate(16deg);
+  height: 90px;
+  width: 90px;
+}
+
+.app-title {
+  position: relative;
+  color: white;
+  font-size: 70px;
+  font-weight: 700;
+  align-self: flex-end;
+  margin-left: 20px;
+  bottom: 2px;
+  letter-spacing: 0.5rem;
+  transform: skewX(-6deg);
+  cursor: default;
+}
+
+.header-extra-text {
+  position: absolute;
+  font-size: 30px;
+  transform: skewX(-3deg);
+  color: #d1bebe;
+  z-index: -100;
+  top: -26px;
+  right: -200px;
+  font-weight: 400;
+  opacity: 20%;
+}
+
+.spacer {
+  display: block;
+  height: 110px;
+  width: 100%;
+}

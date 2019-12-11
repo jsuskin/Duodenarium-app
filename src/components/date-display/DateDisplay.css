@@ -1,0 +1,28 @@
+.date-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 12px;
+  height: 70px;
+  /* background: #d1bebe; */
+  background: #1c1a1a;
+}
+
+.date-display * {
+  /* color: #2e2a2a; */
+  color: #d1bebe;
+}
+
+.displayed-date {
+  font-size: 30px;
+  cursor: default;
+}
+
+.change-date {
+  cursor: pointer;
+}
+
+.change-date:hover {
+  color: #e3d8d8;
+}
