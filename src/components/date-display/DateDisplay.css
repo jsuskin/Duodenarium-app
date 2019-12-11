@@ -1,5 +1,8 @@
 .date-display {
   display: flex;
+  position: fixed;
+  bottom: 70px;
+  z-index: 100000;
   justify-content: space-between;
   align-items: center;
   width: 100%;
