@@ -65,7 +65,7 @@
   font-weight: 700;
   align-self: flex-end;
   margin-left: 20px;
-  bottom: 2px;
+  bottom: 5px;
   letter-spacing: 0.5rem;
   transform: skewX(-6deg);
   cursor: default;
@@ -77,8 +77,8 @@
   transform: skewX(-3deg);
   color: #d1bebe;
   z-index: -100;
-  top: -26px;
-  right: -200px;
+  top: -29px;
+  right: -150px;
   font-weight: 400;
   opacity: 20%;
 }

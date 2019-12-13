@@ -5,6 +5,7 @@ import Content from './components/content/Content';
 import DateDisplay from './components/date-display/DateDisplay';
 import Player from './components/footer/Player';
 import ReactPlayer from 'react-player';
+import { songs, weekdays, months } from './data';
 import * as moment from 'moment';
 import 'moment-duration-format';
 import './App.css';
@@ -19,7 +20,38 @@ class App extends Component {
       url: '',
       duration: '',
       remaining: ''
-    }
+    },
+    selectedDate: {
+      weekday: '',
+      month: '',
+      day: '',
+      year: ''
+    },
+    today: '',
+    songs: []
+  }
+
+  componentDidMount() {
+    // today
+    const [
+      weekday,
+      month,
+      day,
+      year
+    ] = moment(new Date())._i.toString().split(' ').slice(0, 4);
+    const displayedDate = `${weekdays[weekday]}, ${months[month]} ${day}, ${year}`;
+
+    this.setState({
+      ...this.state,
+      selectedDate: {
+        weekday: weekdays[weekday],
+        month: months[month],
+        day: day,
+        year: year
+      },
+      today: displayedDate,
+      songs: songs.filter(song => song.created_at === displayedDate)
+    });
   }
 
   handleSelectSong = (e, url, artist, song) => {
@@ -101,14 +133,15 @@ class App extends Component {
   handleVolumeChange = level => this.setState({ volume: level });
 
   render() {
-    const { playing, volume } = this.state;
+    const { playing, volume, selectedDate, today, songs } = this.state;
     const { artist, song, url, remaining, duration } = this.state.selectedSong;
+
     return (
       <div className="app">
         <Header />
         <Spacer />
-        <Content handleSelectSong={this.handleSelectSong} />
-        <DateDisplay />
+        <Content handleSelectSong={this.handleSelectSong} songs={songs} />
+        <DateDisplay selectedDate={selectedDate} today={today} />
         <ReactPlayer
           url={url}
           playing={playing}

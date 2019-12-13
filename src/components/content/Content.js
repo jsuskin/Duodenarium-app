@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Song from './Song';
-import { songs } from '../../data';
+// import { songs } from '../../data';
 import './Content.css';
 
 class Content extends Component {
@@ -11,7 +11,7 @@ class Content extends Component {
         <div className="content">
           <div className="songs-container">
             <ul>
-              {songs.map(song => {
+              {this.props.songs.map(song => {
                 return (
                   <Song
                     key={song.id}

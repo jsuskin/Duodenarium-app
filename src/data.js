@@ -1,3 +1,28 @@
+export const weekdays = {
+  Sun: 'Sunday',
+  Mon: 'Monday',
+  Tue: 'Tuesday',
+  Wed: 'Wednesday',
+  Thu: 'Thursday',
+  Fri: 'Friday',
+  Sat: 'Saturday',
+};
+
+export const months = {
+  Jan: 'January',
+  Feb: 'February',
+  Mar: 'March',
+  Apr: 'April',
+  May: 'May',
+  Jun: 'June',
+  Jul: 'July',
+  Aug: 'August',
+  Sep: 'September',
+  Oct: 'October',
+  Nov: 'November',
+  Dec: 'December',
+}
+
 export const songs = [
   {
     id: 1,
@@ -10,7 +35,8 @@ export const songs = [
       discogs: 'https://www.discogs.com/Mark-A-Mitchell-How-Can-I-All-Your-Love/release/6928730',
       bandcamp: 'https://fantasyloverecords.bandcamp.com/album/how-can-i-all-your-love',
       soundcloud: 'https://soundcloud.com/fantasyloverecords/mark-a-mitchell-how-can-i'
-    }
+    },
+    created_at: 'Friday, December 13, 2019'
   },
   {
     id: 2,
@@ -23,7 +49,8 @@ export const songs = [
       discogs: '',
       bandcamp: '',
       soundcloud: 'https://soundcloud.com/narrokh/fever-ray-to-the-moon-and-back-nar-remix'
-    }
+    },
+    created_at: 'Friday, December 13, 2019'
   },
   {
     id: 3,
@@ -36,7 +63,8 @@ export const songs = [
       discogs: 'https://www.discogs.com/Kay-Cee-Jones-The-Japanese-Farewell-Song/release/6366076',
       bandcamp: '',
       soundcloud: ''
-    }
+    },
+    created_at: 'Friday, December 13, 2019'
   },
   {
     id: 4,
@@ -49,7 +77,8 @@ export const songs = [
       discogs: '',
       bandcamp: '',
       soundcloud: 'https://soundcloud.com/treohfie/tre-oh-fie-on-beat'
-    }
+    },
+    created_at: 'Friday, December 13, 2019'
   },
   {
     id: 5,
@@ -62,7 +91,8 @@ export const songs = [
       discogs: 'https://www.discogs.com/Sandra-Hamilton-Parang-Jam-Happy-New-Year/release/7658723',
       bandcamp: 'https://soundwayrecords.bandcamp.com/album/latin-parang-parang-jam',
       soundcloud: ''
-    }
+    },
+    created_at: 'Friday, December 13, 2019'
   },
   {
     id: 6,
@@ -75,7 +105,8 @@ export const songs = [
       discogs: 'https://www.discogs.com/Rosal%C3%ADa-A-Pal%C3%A9/release/14369199',
       bandcamp: '',
       soundcloud: 'https://soundcloud.com/rosaliaofficial/a-pale'
-    }
+    },
+    created_at: 'Friday, December 13, 2019'
   },
   {
     id: 7,
@@ -88,7 +119,8 @@ export const songs = [
       discogs: 'https://www.discogs.com/The-J-Arthur-Keenes-Band-Seven-Magic-Words/release/12093028',
       bandcamp: 'https://thejarthurkeenesband.bandcamp.com/track/string-you-along',
       soundcloud: ''
-    }
+    },
+    created_at: 'Friday, December 13, 2019'
   },
   {
     id: 8,
@@ -101,7 +133,8 @@ export const songs = [
       discogs: 'https://www.discogs.com/Night-Moves-Colored-Emotions/release/4004974',
       bandcamp: 'https://nightmoves.bandcamp.com/album/colored-emotions',
       soundcloud: 'https://soundcloud.com/creamsleeve/country-queen'
-    }
+    },
+    created_at: 'Friday, December 13, 2019'
   },
   {
     id: 9,
@@ -114,7 +147,8 @@ export const songs = [
       discogs: 'https://www.discogs.com/Haram-Drescher/release/1349801',
       bandcamp: 'https://haramdc.bandcamp.com/album/drescher',
       soundcloud: ''
-    }
+    },
+    created_at: 'Friday, December 13, 2019'
   },
   {
     id: 10,
@@ -127,7 +161,8 @@ export const songs = [
       discogs: 'https://www.discogs.com/Brooks-Bros-Lookin-For-A-Woman/release/1815312',
       bandcamp: '',
       soundcloud: 'https://soundcloud.com/kevin-johnson-220/the-brooks-brothers-looking'
-    }
+    },
+    created_at: 'Friday, December 13, 2019'
   },
   {
     id: 11,
@@ -140,7 +175,8 @@ export const songs = [
       discogs: 'https://www.discogs.com/Sheek-Louch-Silverback-Gorilla-2/release/7811851',
       bandcamp: 'https://sheeklouch.bandcamp.com/track/what-you-want-the-money-for-feat-swizz-beatz',
       soundcloud: 'https://soundcloud.com/tommyboy/whatyouwantthemoneyfor'
-    }
+    },
+    created_at: 'Friday, December 13, 2019'
   },
   {
     id: 12,
@@ -153,6 +189,21 @@ export const songs = [
       discogs: 'https://www.discogs.com/Dorothy-Ashby-Dorothys-Harp/release/1134616',
       bandcamp: '',
       soundcloud: ''
-    }
+    },
+    created_at: 'Friday, December 13, 2019'
+  },
+  {
+    id: 13,
+    artist: 'Mandrill',
+    song: 'Children of the Sun',
+    tags: ['Funk', 'Soul'],
+    url: 'https://www.youtube.com/watch?v=GcN09gVsiDw',
+    image: 'https://img.discogs.com/uiavOK894Erh5XaRaEaD8ZwgHes=/fit-in/600x597/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-2700631-1402815202-7568.jpeg.jpg',
+    externalLinks: {
+      discogs: 'https://www.discogs.com/Mandrill-Mandrill-Is/release/2700631',
+      bandcamp: '',
+      soundcloud: ''
+    },
+    created_at: 'Thursday, December 12, 2019'
   }
 ]

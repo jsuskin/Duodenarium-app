@@ -1,8 +1,6 @@
 .date-display {
   display: flex;
   position: fixed;
-  bottom: 70px;
-  z-index: 100000;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -10,6 +8,8 @@
   height: 70px;
   /* background: #d1bebe; */
   background: #1c1a1a;
+  bottom: 70px;
+  z-index: 100000;
 }
 
 .date-display * {
@@ -28,4 +28,9 @@
 
 .change-date:hover {
   color: #e3d8d8;
+}
+
+.disabled {
+  opacity: 10;
+  cursor: default;
 }
