@@ -25,33 +25,52 @@ class App extends Component {
       weekday: '',
       month: '',
       day: '',
-      year: ''
+      year: '',
+      unformatted: {},
+      daysBack: 0
     },
+    selectedDateFormatted: '',
     today: '',
     songs: []
   }
 
-  componentDidMount() {
-    // today
+  getToday(daysBack) {
+    const today = moment()._d;
+    const selectedDay = moment().subtract(daysBack, 'day')._d;
+
     const [
       weekday,
       month,
       day,
       year
-    ] = moment(new Date())._i.toString().split(' ').slice(0, 4);
+    ] = selectedDay.toString().split(' ').slice(0, 4);
+    const [
+      weekdayToday,
+      monthToday,
+      dayToday,
+      yearToday
+    ] = today.toString().split(' ').slice(0, 4);
     const displayedDate = `${weekdays[weekday]}, ${months[month]} ${day}, ${year}`;
+    const todaysDate = `${weekdays[weekdayToday]}, ${months[monthToday]} ${dayToday}, ${yearToday}`;
 
     this.setState({
       ...this.state,
       selectedDate: {
+        // unformatted: selectedDay,
+        daysBack: daysBack,
         weekday: weekdays[weekday],
         month: months[month],
         day: day,
         year: year
       },
-      today: displayedDate,
+      today: todaysDate,
+      selectedDateFormatted: displayedDate,
       songs: songs.filter(song => song.created_at === displayedDate)
     });
+  }
+
+  componentDidMount() {
+    this.getToday(0);
   }
 
   handleSelectSong = (e, url, artist, song) => {
@@ -132,8 +151,22 @@ class App extends Component {
 
   handleVolumeChange = level => this.setState({ volume: level });
 
+  handleChangeDate = (n) => {
+    const num = this.state.selectedDate.daysBack + n;
+
+    this.setState({
+      ...this.state,
+      selectedDate: {
+        ...this.state.selectedDate,
+        daysBack: num
+      }
+    });
+
+    this.getToday(num);
+  }
+
   render() {
-    const { playing, volume, selectedDate, today, songs } = this.state;
+    const { playing, volume, selectedDate, selectedDateFormatted, songs, today } = this.state;
     const { artist, song, url, remaining, duration } = this.state.selectedSong;
 
     return (
@@ -141,7 +174,12 @@ class App extends Component {
         <Header />
         <Spacer />
         <Content handleSelectSong={this.handleSelectSong} songs={songs} />
-        <DateDisplay selectedDate={selectedDate} today={today} />
+        <DateDisplay
+          selectedDateFormatted={selectedDateFormatted}
+          selectedDate={selectedDate}
+          today={today}
+          handleChangeDate={this.handleChangeDate}
+        />
         <ReactPlayer
           url={url}
           playing={playing}
