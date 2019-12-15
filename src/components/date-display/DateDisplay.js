@@ -6,8 +6,7 @@ class DateDisplay extends Component {
 
   render() {
     const { weekday, month, day, year } = this.props.selectedDate;
-    console.log(this.props.selectedDateFormatted);
-    console.log(this.props.today);
+
     return (
       <div className="date-display">
         <Icon

@@ -4,19 +4,19 @@ import ExternalLinks from './ExternalLinks';
 class Song extends Component {
 
   render() {
-    const { artist, song, url, image, tags, externalLinks, handleSelectSong } = this.props;
+    const { artist, title, url, image, tags, external_links_list, handleSelectSong } = this.props;
     return (
-      <li className="song" onClick={(e) => handleSelectSong(e, url, artist, song)} title="Click to play">
+      <li className="song" onClick={(e) => handleSelectSong(e, url, artist, title)} title={`Click to play "${title}" by ${artist.name}`}>
         <div className="song-container">
           <div className="images">
             <img src={image} alt="album cover" className="album-cover" />
-            <ExternalLinks {...externalLinks} />
+            <ExternalLinks {...external_links_list} />
           </div>
           <div className="song-info">
-            <h3 className="artist-name">{artist}</h3>
-            <h4 className="song-title">{song}</h4>
+            <h3 className="artist-name">{artist.name}</h3>
+            <h4 className="song-title">{title.length > 49 ? title.slice(0, 49) + '...' : title}</h4>
             <p className="tags">
-              <strong>Tags</strong>: {tags.join(', ')}
+              <strong>Tags</strong>: {tags.map(tag => tag.name).join(', ')}
             </p>
           </div>
         </div>

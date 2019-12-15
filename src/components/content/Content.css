@@ -3,13 +3,49 @@ ul {
   flex-wrap: wrap;
   padding-left: 0;
   justify-content: space-between;
-  margin: 0 20px;
+  /* margin: 0 20px; */
+  margin: 0 1.388vw;
 }
 
 ul li {
   list-style: none;
   flex: 0 0 30%;
   /* background: #e3d8d8; */
+}
+
+.no-posts {
+  /* border: 1px dotted black; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  /* height: 560px; */
+  /* height: 35em; */
+  height: 38.88vw;
+  line-height: 100%;
+  font-weight: 700;
+}
+
+.no-posts * {
+  color: #d1bebe;
+}
+
+.no-posts-1 {
+  /* font-size: 200px; */
+  font-size: 13.89vw;
+  transform: scaleX(6);
+}
+
+.no-posts-2 {
+  /* font-size: 170px; */
+  font-size: 11.8055vw;
+  transform: scaleX(3.6);
+}
+
+.no-posts-3 {
+  /* font-size: 140px; */
+  font-size: 9.722vw;
+  transform: scaleX(3.55);
 }
 
 .songs-container {
@@ -26,15 +62,20 @@ ul li {
 }
 
 .song {
-  padding: 14px 34px;
-  margin: 10px;
-  border: 2px solid #2e2a2a;
-  border-radius: 10px;
+  /* padding: 14px 34px; */
+  padding: 1.705237515225335vh 2.361111111111111vw;
+  /* margin: 10px; */
+  margin: 1.218026796589525vh 0.6944444444444444vw;
+  /* border: 2px solid #2e2a2a; */
+  border: 0.1388888888888889vw solid #2e2a2a;
+  /* border-radius: 10px; */
+  border-radius: 0.6944444444444444vw;
   cursor: pointer;
   transition: 0.3s;
   z-index: 10000;
   background-size: 200% auto;
   background-image: linear-gradient(to right, #e3d8d8 0%, #d1bebe 51%, #fff 100%);
+  min-width: 27.78vw;
   /* max-height: 120px; */
 }
 
@@ -51,19 +92,23 @@ ul li {
 }
 
 .song-info {
-  padding-right: 10px;
+  /* padding-right: 10px; */
+  padding-right: 0.6944444444444444vw;
 }
 
 .artist-name {
+  font-size: 1.4285714333333333vw;
   font-weight: 700;
 }
 
 .song-title {
+  font-size: 1.1904761888888888vw;
   font-weight: 400;
 }
 
 .tags {
-  font-size: 11px;
+  /* font-size: 11px; */
+  font-size: 0.7638888888888888vw;
   font-weight: 300;
 }
 
@@ -73,8 +118,10 @@ h1, h2, h3, h4, h5 {
 }
 
 .album-cover {
-  width: 80px;
-  height: 80px;
+  /* width: 80px; */
+  width: 5.555vw;
+  /* height: 80px; */
+  height: 9.7442vh;
 }
 
 .images {
@@ -86,12 +133,15 @@ h1, h2, h3, h4, h5 {
 .external-links {
   display: flex;
   flex-direction: column;
-  margin-left: 22px;
+  /* margin-left: 22px; */
+  margin-left: 1.5277777777777777vw;
 }
 
-.link-logo {
-  width: 22px;
-  height: 22px;
+.link-logo, iframe {
+  /* width: 22px; */
+  width: 1.5277777777777777vw;
+  /* height: 22px; */
+  height: 2.679658952496955vh;
 }
 
 .disabled-link {

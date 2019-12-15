@@ -16,7 +16,7 @@ class Player extends Component {
           handleStop={this.props.handleStop}
         />
         <PlayerDisplay
-          artist={this.props.artist}
+          artist={this.props.artist.name}
           song={this.props.song}
           remaining={this.props.remaining}
           duration={this.props.duration}

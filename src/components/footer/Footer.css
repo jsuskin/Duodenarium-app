@@ -1,6 +1,6 @@
 .player-icon {
   color: #d1bebe;
-  padding: 0 30px;
+  padding: 0 2.0833333333333335vw;
   cursor: pointer;
 }
 
@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  height: 8.526187576126675vh;
   width: 100%;
   bottom: 0;
   z-index: 100000;
@@ -21,22 +21,21 @@
 }
 
 .player-controls {
-  margin-left: 20px;
+  margin-left: 1.3888888888888888vw;
 }
 
 .player-display {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* justify-content: center; */
   width: 30vw;
-  height: 50px;
-  /* background: black; */
-  background-position: 120px 30px;
+  height: 6.090133982947624vh;
+  background-position: 14.616321559074299vh 2.0833333333333335vw;
   background: linear-gradient(-313deg, black 0%, #403b3b 50%, #383636 93%, #d1bebe 98%, #e3d8d8 100%);
   background: radial-gradient(circle, black 0%, #403b3b 60%, #383636 93%, #d1bebe 979%, #e3d8d8 100%);
-  margin: 0 70px;
-  border-radius: 10px;
+  margin: 0 4.861111111111111vw;
+  border-radius: 0.6944444444444444vw;
+  font-size: 1vw;
 }
 
 .player-display * {
@@ -44,7 +43,7 @@
 }
 
 .player-display-info {
-  margin-left: 20px;
+  margin-left: 1.3888888888888888vw;
 }
 
 .player-display-data {
@@ -53,24 +52,21 @@
 }
 
 .player-display-time {
-  /* align-self: flex-end; */
   margin-left: auto;
-  margin-right: 20px;
-  /* margin-bottom: 8px; */
+  margin-right: 1.3888888888888888vw;
 }
 
 .volume-display {
-  /* border: 1px dotted black; */
   width: 9vw;
-  height: 50px;
+  height: 6.090133982947624vh;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
 }
 
 .volume-bar {
-  width: 20px;
-  min-height: 10px;
+  width: 1.3888888888888888vw;
+  min-height: 1.218026796589525vh;
   background: #74b553;
   cursor: pointer;
 }
@@ -80,26 +76,26 @@
 }
 
 .volume-1 {
-  height: 10px;
+  height: 1.218026796589525vh;
 }
 
 .volume-2 {
-  height: 20px;
+  height: 2.43605359317905vh;
 }
 
 .volume-3 {
-  height: 30px;
+  height: 3.6540803897685747vh;
 }
 
 .volume-4 {
-  height: 40px;
+  height: 4.8721071863581vh;
 }
 
 .volume-5 {
-  height: 50px;
+  height: 6.090133982947624vh;
 }
 
 
 .volume-controls {
-  margin-right: 20px;
+  margin-right: 1.39vw;
 }

@@ -5,7 +5,7 @@ import Content from './components/content/Content';
 import DateDisplay from './components/date-display/DateDisplay';
 import Player from './components/footer/Player';
 import ReactPlayer from 'react-player';
-import { songs, weekdays, months } from './data';
+import { weekdays, months } from './data';
 import * as moment from 'moment';
 import 'moment-duration-format';
 import './App.css';
@@ -26,51 +26,52 @@ class App extends Component {
       month: '',
       day: '',
       year: '',
-      unformatted: {},
       daysBack: 0
     },
     selectedDateFormatted: '',
     today: '',
-    songs: []
+    songs: [],
+    fetchedSongs: []
   }
 
-  getToday(daysBack) {
+  fetchSongs() {
+    fetch('http://localhost:3000/songs')
+      .then(res => res.json())
+      .then(songs => {
+        this.setState({
+          ...this.state,
+          fetchedSongs: songs
+        });
+        this.getDay(0);
+      })
+  }
+
+  getDay(daysBack) {
     const today = moment()._d;
     const selectedDay = moment().subtract(daysBack, 'day')._d;
+    const songs = this.state.fetchedSongs;
 
-    const [
-      weekday,
-      month,
-      day,
-      year
-    ] = selectedDay.toString().split(' ').slice(0, 4);
-    const [
-      weekdayToday,
-      monthToday,
-      dayToday,
-      yearToday
-    ] = today.toString().split(' ').slice(0, 4);
-    const displayedDate = `${weekdays[weekday]}, ${months[month]} ${day}, ${year}`;
-    const todaysDate = `${weekdays[weekdayToday]}, ${months[monthToday]} ${dayToday}, ${yearToday}`;
+    // console.log(this.state.fetchedSongs)
+    // console.log(songs)
 
     this.setState({
       ...this.state,
       selectedDate: {
-        // unformatted: selectedDay,
         daysBack: daysBack,
-        weekday: weekdays[weekday],
-        month: months[month],
-        day: day,
-        year: year
+        weekday: weekdays[getSelectedDay(selectedDay).weekday],
+        month: months[getSelectedDay(selectedDay).month],
+        day: getSelectedDay(selectedDay).day,
+        year: getSelectedDay(selectedDay).year
       },
-      today: todaysDate,
-      selectedDateFormatted: displayedDate,
-      songs: songs.filter(song => song.created_at === displayedDate)
+      today: getSelectedDay(today).displayedDate,
+      selectedDateFormatted: getSelectedDay(selectedDay).displayedDate,
+      songs: songs.filter(song => convertDate(song.created_at) === getSelectedDay(selectedDay).displayedDate)
     });
   }
 
   componentDidMount() {
-    this.getToday(0);
+
+    this.fetchSongs();
   }
 
   handleSelectSong = (e, url, artist, song) => {
@@ -162,7 +163,7 @@ class App extends Component {
       }
     });
 
-    this.getToday(num);
+    this.getDay(num);
   }
 
   render() {
@@ -173,7 +174,20 @@ class App extends Component {
       <div className="app">
         <Header />
         <Spacer />
-        <Content handleSelectSong={this.handleSelectSong} songs={songs} />
+        {
+          songs.length ? (
+            <Content
+              handleSelectSong={this.handleSelectSong}
+              songs={songs}
+            />
+          ) : (
+            <div className="no-posts">
+              <div className="no-posts-1">No</div>
+              <div className="no-posts-2">Posts</div>
+              <div className="no-posts-3">Today</div>
+            </div>
+          )
+        }
         <DateDisplay
           selectedDateFormatted={selectedDateFormatted}
           selectedDate={selectedDate}
@@ -212,6 +226,22 @@ function convertTime(sec) {
   const seconds = sec;
   const duration = moment.duration(seconds, 'seconds');
   return duration.format("hh:mm:ss");
+}
+
+function getSelectedDay(sel) {
+  const [
+    weekday,
+    month,
+    day,
+    year
+  ] = sel.toString().split(' ').slice(0, 4);
+  const displayedDate = `${weekdays[weekday]}, ${months[month]} ${day}, ${year}`;
+  return { displayedDate, weekday, month, day, year }
+}
+
+function convertDate(timestamp) {
+  const formatted = moment(timestamp, "YYYY-MM-DD HH:mm:ss");
+  return getSelectedDay(formatted._d).displayedDate;
 }
 
 export default App;
