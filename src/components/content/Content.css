@@ -14,13 +14,10 @@ ul li {
 }
 
 .no-posts {
-  /* border: 1px dotted black; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  /* height: 560px; */
-  /* height: 35em; */
   height: 38.88vw;
   line-height: 100%;
   font-weight: 700;
@@ -146,4 +143,9 @@ h1, h2, h3, h4, h5 {
 
 .disabled-link {
   opacity: 30%;
+}
+
+.player-container {
+  display: none;
+  visibility: hidden;
 }

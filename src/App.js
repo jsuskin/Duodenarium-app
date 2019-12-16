@@ -35,7 +35,8 @@ class App extends Component {
   }
 
   fetchSongs() {
-    fetch('http://localhost:3000/songs')
+    // fetch('http://localhost:3000/songs')
+    fetch('https://duodenarium-api.herokuapp.com/')
       .then(res => res.json())
       .then(songs => {
         this.setState({
@@ -174,34 +175,15 @@ class App extends Component {
       <div className="app">
         <Header />
         <Spacer />
-        {
-          songs.length ? (
-            <Content
-              handleSelectSong={this.handleSelectSong}
-              songs={songs}
-            />
-          ) : (
-            <div className="no-posts">
-              <div className="no-posts-1">No</div>
-              <div className="no-posts-2">Posts</div>
-              <div className="no-posts-3">Today</div>
-            </div>
-          )
-        }
+        <Content
+          handleSelectSong={this.handleSelectSong}
+          songs={songs}
+        />
         <DateDisplay
           selectedDateFormatted={selectedDateFormatted}
           selectedDate={selectedDate}
           today={today}
           handleChangeDate={this.handleChangeDate}
-        />
-        <ReactPlayer
-          url={url}
-          playing={playing}
-          volume={volume}
-          width="0"
-          height="0"
-          onDuration={this.handleDuration}
-          onProgress={this.handleProgress}
         />
         <Player
           artist={artist}
@@ -217,6 +199,17 @@ class App extends Component {
           handleVolumeUp={this.handleVolumeUp}
           handleMute={this.handleMute}
         />
+        <div className="player-container">
+          <ReactPlayer
+            url={url}
+            playing={playing}
+            volume={volume}
+            width="0"
+            height="0"
+            onDuration={this.handleDuration}
+            onProgress={this.handleProgress}
+          />
+        </div>
       </div>
     )
   };

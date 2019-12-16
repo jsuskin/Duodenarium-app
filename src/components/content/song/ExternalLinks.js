@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import discogsLogo from '../../data/img/discogs_vinyl_record_mark.png';
-import bandcampLogo from '../../data/img/bandcamp_logo.png';
+import discogsLogo from '../../../data/img/discogs_vinyl_record_mark.png';
+import bandcampLogo from '../../../data/img/bandcamp_logo.png';
 
 class ExternalLinks extends Component {
 
